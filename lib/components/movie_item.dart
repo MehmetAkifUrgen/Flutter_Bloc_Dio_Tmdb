@@ -11,21 +11,19 @@ class MovieItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Center(
-            child: Container(
-              height: 150,
-              width: 75,
-              child: Image.network(
-                'https://image.tmdb.org/t/p/w200${posterPath}',
-              ),
+    return Column(
+      children: [
+        Center(
+          child: SizedBox(
+            height: 150,
+            width: 75,
+            child: Image.network(
+              'https://image.tmdb.org/t/p/w200$posterPath',
             ),
           ),
-          Text(title,style: TextStyle(fontSize: 18,fontWeight:FontWeight.bold),)
-        ],
-      ),
+        ),
+        Text(title,style: const TextStyle(fontSize: 18,fontWeight:FontWeight.bold),)
+      ],
     );
   }
 }

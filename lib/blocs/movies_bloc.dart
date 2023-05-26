@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '/models/movie.dart';
 import '/services/api_service.dart';
@@ -12,7 +13,7 @@ class MoviesBloc extends Cubit<List<Movie>> {
       final movies = await _apiService.getPopularMovies();
       emit(movies);
     } catch (e) {
-      // Hata durumunda gerekli işlemleri yapabilirsiniz
+      const AlertDialog(title: Text("Error"));
     }
   }
 }
